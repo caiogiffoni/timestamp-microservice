@@ -8,7 +8,6 @@ app.use(express.json());
 
 appRoutes(app);
 
-
 app.use(errorMiddleware);
 
 app.listen(3000);

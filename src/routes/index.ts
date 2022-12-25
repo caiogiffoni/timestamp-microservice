@@ -1,5 +1,5 @@
 import { Express, Request, Response } from "express";
-import { myController } from "../controllers/time.controller";
+import { TimeController } from "../controllers/time.controller";
 
 export const appRoutes = (app: Express) => {
   app.get("/bananaa", (req: Request, res: Response) => {
@@ -8,6 +8,5 @@ export const appRoutes = (app: Express) => {
     });
   });
 
-  app.get('/api', myController)
-
+  app.get("/api", TimeController);
 };
