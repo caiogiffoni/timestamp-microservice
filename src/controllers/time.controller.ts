@@ -1,7 +1,13 @@
 import { Request, Response } from "express";
-import { TimeService } from "../services/time.service";
+import { TimeNowService, TimeParService } from "../services/time.service";
 
-export const TimeController = async (req: Request, res: Response) => {
-  const time = await TimeService();
+export const TimeNowController = async (req: Request, res: Response) => {
+  const time = await TimeNowService();
+  return res.status(201).json(time);
+};
+
+export const TimeParController = async (req: Request, res: Response) => {
+  const {date} = req.params;
+  const time = await TimeParService(date);
   return res.status(201).json(time);
 };
